@@ -1,6 +1,6 @@
 package co.com.pragma.r2dbc;
 
-import co.com.pragma.model.user.gateways.TransactionalGateway;
+import co.com.pragma.model.shared.gateway.TransactionalGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.reactive.TransactionalOperator;

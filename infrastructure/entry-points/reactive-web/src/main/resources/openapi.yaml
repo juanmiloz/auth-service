@@ -1,0 +1,47 @@
+openapi: 3.0.1
+info:
+  title: Auth Service API
+  description: CRUD de usuarios (WebFlux)
+  version: v1
+paths:
+  /api/v1/users:
+    post:
+      summary: Create user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserDTO'
+      responses:
+        "201":
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDTO'
+        "400":
+          description: Validation error
+        "409":
+          description: Email already in use
+components:
+  schemas:
+    CreateUserDTO:
+      type: object
+      properties:
+        firstName: { type: string, example: Juan }
+        lastName:  { type: string, example: Perez }
+        email:     { type: string, example: juan.perez@mail.com }
+        id:        { type: string, example: 123 }
+        phoneNumber: { type: string, example: 555-1234 }
+        baseSalary:  { type: number, example: 5000000 }
+    UserDTO:
+      type: object
+      properties:
+        userId: { type: string }
+        firstName: { type: string }
+        lastName: { type: string }
+        email: { type: string }
+        id: { type: string }
+        phoneNumber: { type: string }
+        baseSalary: { type: number }

@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Domain model representing a user.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

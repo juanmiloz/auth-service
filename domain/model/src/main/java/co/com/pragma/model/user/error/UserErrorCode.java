@@ -1,9 +1,12 @@
-package co.com.pragma.model.user.exception.error;
+package co.com.pragma.model.user.error;
 
 import co.com.pragma.model.shared.ErrorCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * User-related error codes with HTTP status and message templates.
+ */
 @Getter
 @RequiredArgsConstructor
 public enum UserErrorCode implements ErrorCode {

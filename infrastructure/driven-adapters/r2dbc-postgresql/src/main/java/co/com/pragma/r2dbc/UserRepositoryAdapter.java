@@ -1,16 +1,17 @@
 package co.com.pragma.r2dbc;
 
+import java.util.UUID;
+
+import org.springframework.stereotype.Repository;
+
 import co.com.pragma.model.user.User;
 import co.com.pragma.model.user.gateways.UserRepository;
 import co.com.pragma.r2dbc.helper.UserDAOMapper;
 import co.com.pragma.r2dbc.repository.UserDAORepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.UUID;
 
 @Repository
 @RequiredArgsConstructor
@@ -24,7 +25,7 @@ public class UserRepositoryAdapter implements UserRepository {
     public Mono<User> createUser(User user) {
         return Mono.just(user)
                 .map(mapper::toUserDAO)
-                .doOnNext(dao -> log.info(">>> Guardando entidad: {}", dao))
+                .doOnNext(dao -> log.info(">>> Saving entity: {}", dao))
                 .flatMap(userRepository::save)
                 .map(mapper::toUser);
     }
