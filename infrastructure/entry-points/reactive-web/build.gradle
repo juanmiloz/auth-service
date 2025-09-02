@@ -6,6 +6,11 @@ dependencies {
     implementation 'io.micrometer:micrometer-registry-prometheus'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
     implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${openapiVersion}"
+    implementation("io.jsonwebtoken:jjwt-api:${jsonwebtokenVersion}")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:${jsonwebtokenVersion}")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:${jsonwebtokenVersion}")
 }

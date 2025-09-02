@@ -31,3 +31,7 @@ adapters:
     schema: public
     username: auth_be_user
     password: LaNtrYSOctIsMycionAlPTiCKEYema
+
+jwt:
+  secret: 2eba44ac3591ab2ac947956dc24de35a0b6a2d32298d2f12007a8fd939285c97
+  expiration: 1800
