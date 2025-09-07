@@ -1,6 +1,6 @@
 package co.com.pragma.api.config;
 
-import co.com.pragma.api.UserHandler;
+import co.com.pragma.api.user.UserHandler;
 import co.com.pragma.api.RouterRest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ class ConfigTest {
     @Test
     void corsConfigurationShouldAllowOrigins() {
         webTestClient.get()
-                .uri("/api/usecase/path")
+                .uri("/api/v1/users")
                 .exchange()
                 .expectStatus().isOk()
                 .expectHeader().valueEquals("Content-Security-Policy",

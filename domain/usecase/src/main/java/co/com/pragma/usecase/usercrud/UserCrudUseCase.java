@@ -5,7 +5,7 @@ import co.com.pragma.model.user.User;
 import co.com.pragma.model.user.error.UserErrorCode;
 import co.com.pragma.model.shared.gateway.TransactionalGateway;
 import co.com.pragma.model.user.gateways.UserRepository;
-import co.com.pragma.usecase.usercrud.interfaces.UserCrudUseCaseInterface;
+import co.com.pragma.usecase.usercrud.contract.UserCrudUseCaseContract;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
@@ -13,13 +13,13 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 /**
- * Implementation of {@link UserCrudUseCaseInterface}.
+ * Implementation of {@link UserCrudUseCaseContract}.
  * <p>
  * Validates, normalizes and persists user entities.
  * </p>
  */
 @RequiredArgsConstructor
-public class UserCrudUseCase implements UserCrudUseCaseInterface {
+public class UserCrudUseCase implements UserCrudUseCaseContract {
 
     private final UserRepository userRepository;
     private final TransactionalGateway transactionalGateway;
@@ -32,6 +32,13 @@ public class UserCrudUseCase implements UserCrudUseCaseInterface {
                         .map(this::normalize)
                         .flatMap(this::ensureEmailNotTaken)
                         .flatMap(userRepository::createUser)
+        );
+    }
+
+    @Override
+    public Mono<User> getUserByEmail(String email) {
+        return transactionalGateway.execute(
+                userRepository.getByEmail(email)
         );
     }
 
@@ -144,7 +151,9 @@ public class UserCrudUseCase implements UserCrudUseCaseInterface {
                 safeLowerTrim(u.getEmail()),
                 safeTrim(u.getId()),
                 safeTrim(u.getPhoneNumber()),
-                u.getBaseSalary()
+                u.getBaseSalary(),
+                u.getPassword(),
+                u.getRoleId()
         );
     }
 

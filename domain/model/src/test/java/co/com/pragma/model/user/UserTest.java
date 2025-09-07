@@ -36,7 +36,7 @@ public class UserTest {
     @DisplayName("AllArgsConstructor should assign all fields")
     void allArgsConstructor() {
         UUID id = UUID.randomUUID();
-        User u = new User(id, "Juan", "Perez", "jp@mail.com", "123", "555-1234", 1_000_000d);
+        User u = new User(id, "Juan", "Perez", "jp@mail.com", "123", "555-1234", 1_000_000d, "password");
 
         assertThat(u.getUserId()).isEqualTo(id);
         assertThat(u.getFirstName()).isEqualTo("Juan");
@@ -51,9 +51,9 @@ public class UserTest {
     @DisplayName("equals/hashCode should consider all fields (Lombok @Data)")
     void equals_hashCode() {
         UUID id = UUID.randomUUID();
-        User a = new User(id, "Juan", "Perez", "jp@mail.com", "123", "555-1234", 1_000_000d);
-        User b = new User(id, "Juan", "Perez", "jp@mail.com", "123", "555-1234", 1_000_000d);
-        User c = new User(id, "Juan", "Perez", "otro@mail.com", "123", "555-1234", 1_000_000d);
+        User a = new User(id, "Juan", "Perez", "jp@mail.com", "123", "555-1234", 1_000_000d, "password");
+        User b = new User(id, "Juan", "Perez", "jp@mail.com", "123", "555-1234", 1_000_000d, "password");
+        User c = new User(id, "Juan", "Perez", "otro@mail.com", "123", "555-1234", 1_000_000d, "password");
 
         assertThat(a).isEqualTo(b);
         assertThat(a).hasSameHashCodeAs(b);
