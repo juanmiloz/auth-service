@@ -14,7 +14,8 @@ public class UserCreator {
                 "juan.perez@mail.com",
                 "123",
                 "555-1234",
-                5_000_000d
+                5_000_000d,
+                "password"
         );
     }
 
@@ -26,7 +27,8 @@ public class UserCreator {
                 "juan.perez@mail.com",
                 "123",
                 "555-1234",
-                5_000_000d
+                5_000_000d,
+                "password"
         );
     }
 
@@ -38,7 +40,8 @@ public class UserCreator {
                 "juan.perez@mail.com",
                 "123",
                 "555-1234",
-                5_000_000d
+                5_000_000d,
+                "password"
         );
     }
 
@@ -50,7 +53,8 @@ public class UserCreator {
                 "   ",
                 "123",
                 "555-1234",
-                5_000_000d
+                5_000_000d,
+                "password"
         );
     }
 
@@ -62,7 +66,8 @@ public class UserCreator {
                 "not-an-email",
                 "123",
                 "555-1234",
-                5_000_000d
+                5_000_000d,
+                "password"
         );
     }
 
@@ -74,7 +79,8 @@ public class UserCreator {
                 "juan.perez@mail.com",
                 "123",
                 "555-1234",
-                null
+                null,
+                "password"
         );
     }
 
@@ -86,7 +92,8 @@ public class UserCreator {
                 "juan.perez@mail.com",
                 "123",
                 "555-1234",
-                -1000d
+                -1000d,
+                "password"
         );
     }
 
@@ -98,7 +105,8 @@ public class UserCreator {
                 "juan.perez@mail.com",
                 "123",
                 "555-1234",
-                20_000_000d
+                20_000_000d,
+                "password"
         );
     }
 
@@ -110,7 +118,8 @@ public class UserCreator {
                 "duplicate@mail.com",
                 "123",
                 "555-1234",
-                5_000_000d
+                5_000_000d,
+                "password"
         );
     }
 
@@ -122,7 +131,8 @@ public class UserCreator {
                 "TEST@MAIL.COM",  // válido, pasa regex
                 "   123   ",
                 "   555-1234   ",
-                3_000_000d
+                3_000_000d,
+                "password"
         );
     }
 

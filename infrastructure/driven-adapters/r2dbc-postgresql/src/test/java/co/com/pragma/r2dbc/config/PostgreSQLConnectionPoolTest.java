@@ -26,7 +26,7 @@ class PostgreSQLConnectionPoolTest {
         when(properties.port()).thenReturn(5432);
         when(properties.database()).thenReturn("dbName");
         when(properties.schema()).thenReturn("schema");
-        when(properties.username()).thenReturn("username");
+        when(properties.username()).thenReturn("email");
         when(properties.password()).thenReturn("password");
     }
 

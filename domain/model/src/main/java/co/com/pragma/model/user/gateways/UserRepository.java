@@ -1,14 +1,17 @@
 package co.com.pragma.model.user.gateways;
 
+import co.com.pragma.model.user.dto.request.LoginModelDTO;
+import co.com.pragma.model.user.dto.response.JwtTokenDTO;
 import co.com.pragma.model.user.User;
-import reactor.core.publisher.Flux;
+import co.com.pragma.model.user.dto.response.UserPrincipalDTO;
 import reactor.core.publisher.Mono;
 
-import java.util.List;
-import java.util.UUID;
-
 /**
- * Reactive repository interface for user persistence operations.
+ * Reactive repository interface for user persistence and authentication operations.
+ * <p>
+ * All methods are non-blocking and return a {@link Mono} that either emits the result
+ * or completes with an error. Implementations should avoid blocking I/O.
+ * </p>
  */
 public interface UserRepository {
 
@@ -29,18 +32,11 @@ public interface UserRepository {
     Mono<Boolean> existsByEmail(String email);
 
     /**
-     * Retrieves a user by its ID.
+     * Retrieves a user by email.
      *
-     * @param userId unique identifier
-     * @return {@link Mono} emitting the found user or empty if not found
+     * @param email user's email; must not be {@code null} or blank
+     * @return {@link Mono} emitting the {@link User} if found, or {@link Mono#empty()} if not found
      */
-    Mono<User> getUserById(UUID userId);
-
-    /**
-     * Retrieves all users.
-     *
-     * @return {@link Flux} emitting all users
-     */
-    Flux<User> getAllUsers();
+    Mono<User> getByEmail(String email);
 
 }

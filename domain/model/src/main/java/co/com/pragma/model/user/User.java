@@ -1,6 +1,7 @@
 package co.com.pragma.model.user;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder(toBuilder = true)
 public class User {
 
     private UUID userId;
@@ -21,5 +23,7 @@ public class User {
     private String id;
     private String phoneNumber;
     private Double baseSalary;
+    private String password;
+    private UUID roleId;
 
 }
