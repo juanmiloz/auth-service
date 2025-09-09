@@ -15,7 +15,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 5_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -28,7 +29,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 5_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -41,7 +43,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 5_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -54,7 +57,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 5_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -67,7 +71,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 5_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -80,7 +85,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 null,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -93,7 +99,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 -1000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -106,7 +113,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 20_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -119,7 +127,8 @@ public class UserCreator {
                 "123",
                 "555-1234",
                 5_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
@@ -128,11 +137,12 @@ public class UserCreator {
                 null,
                 "  Juan  ",
                 "  Perez  ",
-                "TEST@MAIL.COM",  // válido, pasa regex
+                "TEST@MAIL.COM",
                 "   123   ",
                 "   555-1234   ",
                 3_000_000d,
-                "password"
+                "password",
+                UUID.randomUUID()
         );
     }
 
