@@ -25,13 +25,12 @@ cors:
 
 adapters:
   r2dbc:
-    host: localhost
-    port: 5432
-    database: auth_db
-    schema: public
-    username: auth_be_user
-    password: LaNtrYSOctIsMycionAlPTiCKEYema
-
+    host: ${SPRING_DATASOURCE_HOST}
+    port: ${SPRING_DATASOURCE_PORT}
+    database: ${SPRING_DATASOURCE_DATABASE}
+    schema: ${SPRING_DATASOURCE_SCHEMA}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
 jwt:
-  secret: 2eba44ac3591ab2ac947956dc24de35a0b6a2d32298d2f12007a8fd939285c97
-  expiration: 1h
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION}
